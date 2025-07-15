@@ -10,10 +10,14 @@ public class Application {
     public static void main(String[] args) {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(AppConfig.class);
+        for(int i = 0; i < 100000; i++){
+            Math.sin(i);            //Прогрев программы перед замерами
+        }
+
         for (int i = 0; i < 5; i++) {
             AnimalsCage bean =
                     applicationContext.getBean(AnimalsCage.class);
-            bean.whatAnimalSay();
+            bean.whatAnimalSay(); //На выходе стабильное время после прогрева
         }
     }
 

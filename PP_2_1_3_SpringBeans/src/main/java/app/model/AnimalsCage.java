@@ -21,11 +21,10 @@ public class AnimalsCage {
     }
 
     public void whatAnimalSay() {
-        Instant fixedTime = Instant.now(); //Просто фиксируем время в методе
         System.out.println("Say:");
         System.out.println(animal.toString());
         System.out.println("At:");
-        System.out.println(new Timer().getCurrentTime());
+        System.out.println(new Timer().getTime());
         System.out.println("________________________");
     }
 }
